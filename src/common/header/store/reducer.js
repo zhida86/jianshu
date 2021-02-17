@@ -1,21 +1,27 @@
-import * as constants from './constants';
-import { fromJS } from 'immutable';
+import * as constants from "./constants";
+import { fromJS } from "immutable";
 
 // immutable 库
 // 帮助生成 immutable 对象
 
 const defaultState = fromJS({
-  focused: false
+  focused: false,
+  list: [],
+  page: 1,
+  totalPage: 1,
 });
 
 const reducer = (state = defaultState, action) => {
-  if (action.type === constants.SEARCH_FOCUS) {
-    return state.set('focused', true);
+  switch (action.type) {
+    case constants.SEARCH_FOCUS:
+      return state.set("focused", true);
+    case constants.SEARCH_BLUR:
+      return state.set("focused", false);
+    case constants.CHANGE_LIST:
+      return state.set("list", action.data).set("totalPage", action.totalPage);
+    default:
+      return state;
   }
-  if (action.type === constants.SEARCH_BLUR) {
-    return state.set('focused', false);
-  }
-  return state;
-}
+};
 
 export default reducer;

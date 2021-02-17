@@ -1,5 +1,5 @@
-import styled from 'styled-components';
-import logoPic from '../../static/logo.png';
+import styled from "styled-components";
+import logoPic from "../../static/logo.png";
 
 export const HeaderWrapper = styled.div`
   position: relative;
@@ -8,14 +8,14 @@ export const HeaderWrapper = styled.div`
 `;
 
 export const Logo = styled.a.attrs({
-  href: '/'
+  href: "/",
 })`
   position: absolute;
   top: 0;
   left: 0;
   display: block;
   height: 56px;
-  width:100px;
+  width: 100px;
   background: url(${logoPic});
   background-size: contain;
 `;
@@ -65,7 +65,7 @@ export const SearchWrapper = styled.div`
 `;
 
 export const NavSearch = styled.input.attrs({
-  placeholder: '搜索'
+  placeholder: "搜索",
 })`
   width: 160px;
   height: 38px;
@@ -77,7 +77,7 @@ export const NavSearch = styled.input.attrs({
   outline: none;
   border-radius: 19px;
   background: #eee;
-  font-size:14px;
+  font-size: 14px;
   color: #666;
   &::placeholder {
     color: #999;
@@ -86,19 +86,58 @@ export const NavSearch = styled.input.attrs({
     width: 240px;
   }
   &.slide.enter {
-    width: 160px; 
+    width: 160px;
   }
   &.slide.enter-done {
     width: 240px;
-    transition: all .2s ease-out;
+    transition: all 0.2s ease-out;
   }
   &.slide.exit {
     width: 240px;
   }
   &.slide.exit-done {
     width: 160px;
-    transition: all .2s ease-out;
-  } 
+    transition: all 0.2s ease-out;
+  }
+`;
+
+export const SearchInfo = styled.div`
+  position: absolute;
+  left: 0;
+  top: 58px;
+  width: 240px;
+  padding: 0 20px;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+`;
+
+export const SearchInfoTitle = styled.div`
+  margin-top: 20px;
+  margin-bottom: 15px;
+  line-height: 20px;
+  font-size: 14px;
+  color: #969696;
+`;
+
+export const SearchInfoSwitch = styled.span`
+  float: right;
+  font-size: 13px;
+`;
+
+export const SearchInfoList = styled.div`
+  overfloat: hidden;
+`;
+
+export const SearchInfoItem = styled.a`
+  display: block;
+  float: left;
+  font-size: 12px;
+  padding: 0 5px;
+  margin-right: 10px;
+  margin-bottom: 15px;
+  font-size: 12px;
+  border: 1px solid #ddd;
+  color: #787878;
+  border-radius: 3px;
 `;
 
 export const Addition = styled.div`
